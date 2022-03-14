@@ -24,7 +24,7 @@ Prueba de Api con laravel:
 :open_file_folder: Prueba Mostrar:<p>
 <img src="https://github.com/edwsilme/raw/blob/main/img-api_prueba/Get.JPG" width="500">
 
-:memo: :pencil: Prueba Crear:<p>
+:memo: Prueba Crear:<p>
 <img src="https://github.com/edwsilme/raw/blob/main/img-api_prueba/Post.JPG" width="500">
 
 :mag: Prueba Buscar:<p>
@@ -67,9 +67,6 @@ $ cd ../path/to/the/file
 $ npm install
 $ npm start
 ```
-cp .env.example .env
-composer install -prefer-dist
-php artisan key:generate
 
 
   
