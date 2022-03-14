@@ -9,6 +9,8 @@ class Categoria extends Model
 {
     use HasFactory;
 
+    protected $table = "categorias";
+
     //Relación Categoría - Post
     public function posts(){
         return $this->hasMany(Post::class, 'id'); // Una categoria puede tener varios posts

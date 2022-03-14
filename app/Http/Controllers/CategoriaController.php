@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class CategoriaController extends Controller
 {
@@ -33,7 +34,9 @@ class CategoriaController extends Controller
             'nombre' => 'required|max:150'
         ]);
 
-        $categoria = Categoria::create($request->all());
+        $categoria = new Categoria;
+        $categoria->nombre = $request->input('nombre');
+        $categoria->save();
 
         return \response($categoria);
     }
@@ -62,9 +65,12 @@ class CategoriaController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $categoria = Categoria::findOrFail($id)->update($request->all());
+        $categoria = Categoria::findOrFail($id);
+        $categoria->nombre=$request->input('nombre');
+        $categoria->save();
 
-        return \response($categoria);
+        return \response(content: "El itemse ha actualizado correctamente");
+
     }
 
     /**
@@ -79,5 +85,6 @@ class CategoriaController extends Controller
         Categoria::destroy($id);
 
         return \response(content: "La categoría se ha eliminado correctamente");
+
     }
 }

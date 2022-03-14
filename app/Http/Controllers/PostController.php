@@ -18,7 +18,6 @@ class PostController extends Controller
         $post = Post::all();
 
         return \response($post);
-
     }
 
     /**
@@ -36,7 +35,11 @@ class PostController extends Controller
             'contenido' => 'required'
         ]);
 
-        $post = Post::create($request->all());
+        $post = new Post();
+        $post->categoria_id = $request->input('categoria_id');
+        $post->titulo = $request->input('titulo');
+        $post->contenido = $request->input('contenido');
+        $post->save();
 
         return \response($post);
     }
@@ -65,9 +68,13 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $post = Post::findOrFail($id)->update($request->all());
+        $post = Post::findOrFail($id);
+        $post->categoria_id = $request->input('categoria_id');
+        $post->titulo = $request->input('titulo');
+        $post->contenido = $request->input('contenido');
+        $post->save();
 
-        return \response($post);
+        return \response(content: "El itemse ha actualizado correctamente");
     }
 
     /**

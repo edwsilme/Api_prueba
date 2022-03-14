@@ -9,6 +9,8 @@ class Comentario extends Model
 {
     use HasFactory;
 
+    protected $table = "comentarios";
+
     //Relación Comentario - Post
     public function post(){
         return $this->belongsTo(Post::class, 'id_post'); // Un comentario pertenece a un post

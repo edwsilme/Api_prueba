@@ -16,14 +16,28 @@ Prueba de Api con laravel:
 ### Screenshot
 
   
-:video_game: Pantalla de inicio de la aplicación:<p>
-<img src="https://github.com/edwsilme/raw/blob/main/img-snake/img01.JPG" width="500">
+:video_game: Diagrama de la base de datos:<p>
+<img src="https://github.com/edwsilme/raw/blob/main/img-api_prueba/Diagrama_bd.JPG" width="500">
 
-:arrow_forward: Pantalla de juego iniciado:<p>
-<img src="https://github.com/edwsilme/raw/blob/main/img-snake/img02.JPG" width="500">
+:computer: Pruebas realizadas con Postman:<p>
 
-:arrow_up: Game Over:<br>
-<img src="https://github.com/edwsilme/raw/blob/main/img-snake/img03.JPG" width="500">
+:open_file_folder: Prueba Mostrar:<p>
+<img src="https://github.com/edwsilme/raw/blob/main/img-api_prueba/Get.JPG" width="500">
+
+:memo: :pencil: Prueba Crear:<p>
+<img src="https://github.com/edwsilme/raw/blob/main/img-api_prueba/Post.JPG" width="500">
+
+:mag: Prueba Buscar:<p>
+<img src="https://github.com/edwsilme/raw/blob/main/img-api_prueba/Show.JPG" width="500">
+
+:page_facing_up: Prueba Editar:<p>
+<img src="https://github.com/edwsilme/raw/blob/main/img-api_prueba/Put.JPG" width="500">
+
+:wastebasket: Prueba Eliminar:<p>
+<img src="https://github.com/edwsilme/raw/blob/main/img-api_prueba/Delete.JPG" width="500">
+
+
+
 
 ***
 

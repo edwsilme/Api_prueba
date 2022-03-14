@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comentario;
+use Illuminate\Console\Command;
 use Illuminate\Http\Request;
 
 class ComentarioController extends Controller
@@ -18,7 +19,6 @@ class ComentarioController extends Controller
         $comentario = Comentario::all();
 
         return \response($comentario);
-
     }
 
     /**
@@ -35,7 +35,10 @@ class ComentarioController extends Controller
             'contenido' => 'required|max:250'
         ]);
 
-        $comentario = Comentario::create($request->all());
+        $comentario = new Comentario();
+        $comentario->post_id = $request->input('post_id');
+        $comentario->contenido = $request->input('contenido');
+        $comentario->save();
 
         return \response($comentario);
     }
@@ -64,9 +67,12 @@ class ComentarioController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $comentario = Comentario::findOrFail($id)->update($request->all());
+        $comentario = Comentario::findOrFail($id);
+        $comentario->post_id = $request->input('post_id');
+        $comentario->contenido = $request->input('contenido');
+        $comentario->save();
 
-        return \response($comentario);
+        return \response(content: "El itemse ha actualizado correctamente");
     }
 
     /**

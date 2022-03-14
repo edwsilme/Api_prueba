@@ -9,9 +9,11 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $table = "post";
+
     //Relación Post - Categoría
     public function categorias(){
-        return $this->belongsTo(Categoria::class, 'id_categoria'); // Un post pertenedce a una categoría
+        return $this->belongsTo(Categoria::class, 'id_categoria'); // Un post pertenece a una categoría
     }
 
     //Relación Post - Comentario
